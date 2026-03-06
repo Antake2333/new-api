@@ -107,7 +107,7 @@ print(resp.choices[0].message.content)`;
         </div>
       </div>
 
-      <div className='max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-14 space-y-6'>
+      <div className='max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-14 space-y-8 md:space-y-10'>
         <Card className='!rounded-3xl'>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
             <div className='rounded-2xl bg-semi-color-fill-0 p-5'>
