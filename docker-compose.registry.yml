@@ -1,0 +1,3 @@
+services:
+  new-api:
+    image: ${ORCAS_IMAGE:?ORCAS_IMAGE is required}
