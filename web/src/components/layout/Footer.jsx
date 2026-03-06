@@ -22,6 +22,7 @@ import { useTranslation } from 'react-i18next';
 import { Typography } from '@douyinfe/semi-ui';
 import { getFooterHTML, getLogo, getSystemName } from '../../helpers';
 import { StatusContext } from '../../context/Status';
+import { Link } from 'react-router-dom';
 
 const FooterBar = () => {
   const { t } = useTranslation();
@@ -30,6 +31,8 @@ const FooterBar = () => {
   const logo = getLogo();
   const [statusState] = useContext(StatusContext);
   const isDemoSiteMode = statusState?.status?.demo_site_enabled || false;
+  const projectRepo = 'https://github.com/OrcasAI/orcas-ai-api';
+  const effectiveDocsLink = statusState?.status?.docs_link || projectRepo;
 
   const loadFooter = () => {
     let footer_html = localStorage.getItem('footer_html');
@@ -62,16 +65,11 @@ const FooterBar = () => {
                   {t('关于我们')}
                 </p>
                 <div className='flex flex-col gap-4'>
-                  <a
-                    href='https://docs.newapi.pro/wiki/project-introduction/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='!text-semi-color-text-1'
-                  >
+                  <Link to='/about' className='!text-semi-color-text-1'>
                     {t('关于项目')}
-                  </a>
+                  </Link>
                   <a
-                    href='https://docs.newapi.pro/support/community-interaction/'
+                    href={projectRepo}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='!text-semi-color-text-1'
@@ -79,7 +77,7 @@ const FooterBar = () => {
                     {t('联系我们')}
                   </a>
                   <a
-                    href='https://docs.newapi.pro/wiki/features-introduction/'
+                    href={effectiveDocsLink}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='!text-semi-color-text-1'
@@ -94,16 +92,11 @@ const FooterBar = () => {
                   {t('文档')}
                 </p>
                 <div className='flex flex-col gap-4'>
-                  <a
-                    href='https://docs.newapi.pro/getting-started/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='!text-semi-color-text-1'
-                  >
+                  <Link to='/' className='!text-semi-color-text-1'>
                     {t('快速开始')}
-                  </a>
+                  </Link>
                   <a
-                    href='https://docs.newapi.pro/installation/'
+                    href={effectiveDocsLink}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='!text-semi-color-text-1'
@@ -111,7 +104,7 @@ const FooterBar = () => {
                     {t('安装指南')}
                   </a>
                   <a
-                    href='https://docs.newapi.pro/api/'
+                    href={effectiveDocsLink}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='!text-semi-color-text-1'
@@ -159,12 +152,12 @@ const FooterBar = () => {
                 </p>
                 <div className='flex flex-col gap-4'>
                   <a
-                    href='https://github.com/Calcium-Ion/new-api-horizon'
+                    href={projectRepo}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='!text-semi-color-text-1'
                   >
-                    new-api-horizon
+                    Orcas Ai Api
                   </a>
                   <a
                     href='https://github.com/coaidev/coai'
@@ -200,12 +193,12 @@ const FooterBar = () => {
               {t('设计与开发由')}{' '}
             </span>
             <a
-              href='https://github.com/QuantumNous/new-api'
+              href='https://github.com/OrcasAI/orcas-ai-api'
               target='_blank'
               rel='noopener noreferrer'
               className='!text-semi-color-primary font-medium'
             >
-              New API
+              Orcas Ai Api
             </a>
           </div>
         </div>
@@ -229,12 +222,12 @@ const FooterBar = () => {
           <div className='absolute bottom-2 right-4 text-xs !text-semi-color-text-2 opacity-70'>
             <span>{t('设计与开发由')} </span>
             <a
-              href='https://github.com/QuantumNous/new-api'
+              href='https://github.com/OrcasAI/orcas-ai-api'
               target='_blank'
               rel='noopener noreferrer'
               className='!text-semi-color-primary font-medium'
             >
-              New API
+              Orcas Ai Api
             </a>
           </div>
         </div>
