@@ -23,7 +23,7 @@ var (
 
 func printHelp() {
 	fmt.Println("Orcas Ai Api " + Version + " - The next-generation LLM gateway and AI asset management system supports multiple languages.")
-	fmt.Println("Original Project: OneAPI by JustSong - https://github.com/songquanpeng/one-api")
+	fmt.Println("Base Project: One API by JustSong - https://github.com/songquanpeng/one-api")
 	fmt.Println("Project Repository: https://github.com/OrcasAI/orcas-ai-api")
 	fmt.Println("Usage: newapi [--port <port>] [--log-dir <log directory>] [--version] [--help]")
 }

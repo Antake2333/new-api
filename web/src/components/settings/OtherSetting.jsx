@@ -478,7 +478,7 @@ const OtherSetting = () => {
                 fullMode={false}
                 type='info'
                 description={t(
-                  '移除 One API 的版权标识必须首先获得授权，项目维护需要花费大量精力，如果本项目对你有意义，请主动支持本项目',
+                  '如需移除默认版权标识，请先确认你的二开方案与授权边界；如果这个项目对你有帮助，也可以继续完善并维护它。',
                 )}
                 closeIcon={null}
                 style={{ marginTop: 15 }}

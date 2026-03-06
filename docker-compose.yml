@@ -1,4 +1,4 @@
-# New-API Docker Compose Configuration
+# Orcas Ai Api Docker Compose Configuration
 # 
 # Quick Start:
 #   1. docker-compose up -d
@@ -11,8 +11,6 @@
 #   4. Uncomment mysql_data in volumes section (line 64)
 #
 # ⚠️  IMPORTANT: Change all default passwords before deploying to production!
-
-version: '3.4' # For compatibility with older Docker versions
 
 services:
   new-api:

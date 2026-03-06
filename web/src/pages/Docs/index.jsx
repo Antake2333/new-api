@@ -2,8 +2,8 @@ import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, Typography, Tag } from '@douyinfe/semi-ui';
 import {
-  IconBookOpen,
   IconCopy,
+  IconFile,
   IconKey,
   IconLink,
   IconPlay,
@@ -137,7 +137,7 @@ print(resp.choices[0].message.content)`;
 
             <div className='rounded-2xl bg-semi-color-fill-0 p-5'>
               <div className='flex items-center gap-2 mb-3'>
-                <IconBookOpen />
+                <IconFile />
                 <Text strong>{t('常用入口')}</Text>
               </div>
               <Paragraph className='!mb-0'>
