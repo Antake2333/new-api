@@ -16,7 +16,7 @@ import { API_ENDPOINTS } from '../../constants/common.constant';
 const { Title, Paragraph, Text } = Typography;
 
 const codeBlockClassName =
-  'rounded-2xl border border-semi-color-border bg-[#0f172a] text-slate-100 p-4 overflow-x-auto text-sm leading-6';
+  'rounded-2xl border border-slate-800 bg-slate-950 text-slate-100 p-4 overflow-x-auto text-sm leading-6 shadow-inner';
 
 const Docs = () => {
   const { t } = useTranslation();
@@ -83,7 +83,7 @@ print(resp.choices[0].message.content)`;
           </Title>
           <Paragraph className='!text-lg !text-semi-color-text-1 !max-w-3xl'>
             {t(
-              '这是一份面向使用方的接入说明。你可以直接把当前站点当作 OpenAI 兼容网关来使用，只需要准备令牌、替换 Base URL，并按标准接口发起请求。',
+              '这是一份面向使用方的接入说明。当前站点不仅支持 OpenAI 协议，也支持 Gemini、Claude 以及其他常见大模型中转协议。你只需要准备令牌、确认所用协议、替换对应 Base URL，并按接口规范发起请求。',
             )}
           </Paragraph>
           <div className='flex flex-wrap gap-3 mt-8'>
@@ -141,7 +141,9 @@ print(resp.choices[0].message.content)`;
                 <Text strong>{t('常用入口')}</Text>
               </div>
               <Paragraph className='!mb-0'>
-                {t('聊天、Responses、Embeddings、Images、Audio 等 OpenAI 兼容接口')}
+                {t(
+                  '支持 OpenAI、Gemini、Claude 等协议，以及聊天、Responses、Embeddings、Images、Audio 等常见能力',
+                )}
               </Paragraph>
             </div>
           </div>
@@ -189,7 +191,7 @@ print(resp.choices[0].message.content)`;
           <Title heading={3}>{t('接口地址')}</Title>
           <Paragraph className='!text-semi-color-text-1'>
             {t(
-              '以下是当前站点可直接使用的常见接口地址。大多数使用方只需要把 Base URL 改为本域名 /v1 即可。',
+              '以下是当前站点可直接使用的常见接口地址。不同客户端可以按自身协议选择 OpenAI、Gemini 或 Claude 风格接口；多数 OpenAI SDK 只需要把 Base URL 改为本域名 /v1 即可。',
             )}
           </Paragraph>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-3 mt-5'>
@@ -252,9 +254,10 @@ print(resp.choices[0].message.content)`;
             <code>{`1. Base URL: ${baseUrl}/v1
 2. API Key: 由平台分配
 3. 鉴权方式: Authorization: Bearer YOUR_TOKEN
-4. 兼容接口: OpenAI Chat Completions / Responses / Embeddings / Images / Audio
-5. 模型名称: 以平台提供的模型列表为准
-6. 如果你原本使用 OpenAI SDK，只需要把 base_url 改成这里的地址即可`}</code>
+4. 支持协议: OpenAI / Gemini / Claude
+5. 常用接口: Chat Completions / Responses / Embeddings / Images / Audio
+6. 模型名称: 以平台提供的模型列表为准
+7. 如果你原本使用 OpenAI SDK，只需要把 base_url 改成这里的地址即可`}</code>
           </pre>
         </Card>
 
