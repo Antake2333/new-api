@@ -1,0 +1,6 @@
+services:
+  new-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: orcas-ai-api:local
