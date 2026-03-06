@@ -32,7 +32,6 @@ const FooterBar = () => {
   const [statusState] = useContext(StatusContext);
   const isDemoSiteMode = statusState?.status?.demo_site_enabled || false;
   const projectRepo = 'https://github.com/OrcasAI/orcas-ai-api';
-  const effectiveDocsLink = statusState?.status?.docs_link || projectRepo;
 
   const loadFooter = () => {
     let footer_html = localStorage.getItem('footer_html');
@@ -77,7 +76,7 @@ const FooterBar = () => {
                     {t('联系我们')}
                   </a>
                   <a
-                    href={effectiveDocsLink}
+                    href={projectRepo}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='!text-semi-color-text-1'
@@ -95,22 +94,12 @@ const FooterBar = () => {
                   <Link to='/' className='!text-semi-color-text-1'>
                     {t('快速开始')}
                   </Link>
-                  <a
-                    href={effectiveDocsLink}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='!text-semi-color-text-1'
-                  >
+                  <Link to='/docs' className='!text-semi-color-text-1'>
                     {t('安装指南')}
-                  </a>
-                  <a
-                    href={effectiveDocsLink}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='!text-semi-color-text-1'
-                  >
+                  </Link>
+                  <Link to='/docs' className='!text-semi-color-text-1'>
                     {t('API 文档')}
-                  </a>
+                  </Link>
                 </div>
               </div>
 
